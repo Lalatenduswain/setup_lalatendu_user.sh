@@ -141,7 +141,7 @@ configure_passwordless_sudo() {
     print_info "Configuring passwordless sudo for '$USERNAME'..."
 
     # Create sudoers file
-    echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > "$SUDOERS_FILE"
+    echo "$USERNAME ALL=(ALL:ALL) NOPASSWD: ALL" > "$SUDOERS_FILE"
 
     # Set correct permissions
     chmod 440 "$SUDOERS_FILE"
